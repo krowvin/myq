@@ -7,7 +7,7 @@ Python wrapper for Chamberlain MYQ API
 ## How Tos
 ### Login
 ```
-import MYQ
+from myq import MYQ
 myq = MYQ()
 myq.login('myemail@gmail.com', 'mypassword')
 ```
@@ -23,10 +23,15 @@ myq.toggle()
 
 ### Full Example
 ```
-import MYQ
+from myq import MYQ
+import time
 myq = MYQ()
+# Change these to your MYQ Login
 myq.login('email@gmail.com', 'password')
+print(myq.get_state())
+# Open the door
 myq.open()
+# Print the state until it is considered open, this could make an infinite loop - it's for example use only
 while(myq.get_state()!='open'):
     print(myq.get_state())
     time.sleep(5)
@@ -37,6 +42,29 @@ while(myq.get_state()!='closed'):
     time.sleep(5)
 ```
 
+## Door States
+```
+    1: 'open',
+    2: 'closed',
+    3: 'stopped',
+    4: 'opening',
+    5: 'closing',
+    6: 'unknown',
+    7: 'unknown',
+    8: 'transition',
+    9: 'open',
+    0: 'unknown'
+```
+## Complete List of Methods
+method(args) -> returntype
+* login(username:str, password:str) -> None
+* get_details() -> list
+* is_logged_in() -> bool
+* open() -> list
+* close() -> list
+* toggle() -> list
+* update_garage_details() -> None
+* get_state() -> str
 
 ## Credits
 Special thanks to Arraylabs, I borrowed the API calls and state numbers from their code. Saved me a bunch of legwork with WireShark. 
