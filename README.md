@@ -2,7 +2,8 @@
 Python wrapper for Chamberlain MYQ API
 
 ## Dependencies
-* ```python Requests```
+* requests
+```python -m pip install requests```
 
 ## How Tos
 ### Login
