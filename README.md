@@ -6,23 +6,23 @@ Python wrapper for Chamberlain MYQ API
 
 ## How Tos
 ### Login
-```
+```python
 from myq import MYQ
 myq = MYQ()
 myq.login('myemail@gmail.com', 'mypassword')
 ```
 ### Open / Close
-```
+```python
 myq.close()
 myq.open()
 ```
 ### Toggle!
-```
+```python
 myq.toggle()
 ```
 
 ### Full Example
-```
+```python
 from myq import MYQ
 import time
 myq = MYQ()
@@ -43,7 +43,7 @@ while(myq.get_state()!='closed'):
 ```
 
 ## Door States
-```
+```python
     1: 'open',
     2: 'closed',
     3: 'stopped',
