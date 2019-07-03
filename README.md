@@ -36,3 +36,8 @@ while(myq.get_state()!='closed'):
     print(myq.get_state())
     time.sleep(5)
 ```
+
+
+## Credits
+Special thanks to Arraylabs, I borrowed the API calls and state numbers from their code. Saved me a bunch of legwork with WireShark. 
+Checkout the pymyq here: https://github.com/arraylabs/pymyq
