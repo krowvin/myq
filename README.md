@@ -66,6 +66,8 @@ method(args) -> returntype
 * update_garage_details() -> None
 * get_state() -> str
 
+## Future additions
+* Code for checking if a token has expired - It's possible if the user keeps the myq object alive long ehough the token would expire and a request could fail. One thought is to assign a timestamp with the token and if the current date is beyond the limit, login again with a new timestamp
 ## Credits
 Special thanks to Arraylabs, I borrowed the API calls and state numbers from their code. Saved me a bunch of legwork with WireShark. 
 Checkout the pymyq here: https://github.com/arraylabs/pymyq
